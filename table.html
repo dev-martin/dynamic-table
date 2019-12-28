@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="utf-8" />
+		<title>Exercise 1</title>	
+	</head>
+
+    <body>
+        <script>
+			  "use strict";
+			
+           /* Your JavaScript here */ 
+        
+        var row_num = 1;
+        var sum = 0;
+        var input = 0;
+        var values = [];
+        var cubes = [];
+        
+        while(input !== "done"){
+            
+            input = prompt("Enter a value or \"done\" "); 
+            
+            if(isNaN(input) || input === '')
+            {  
+               if(input !== "done")
+                    window.alert("You did not provide a number");
+            }
+            else if(input == null)
+            {    
+                 break;
+            }
+            else
+            {   
+                input = Math.round(input);
+                values[row_num] = input;
+                cubes[row_num] = Math.pow(input,3);
+
+                sum += parseInt(input);
+
+                row_num ++;
+            }
+                
+         }
+         if(input  == "done")
+         {
+            document.writeln("<strong style=\"margin-left:7Pgit%\">Cubed Root Table</strong>");
+            document.writeln("<table border=\"10\">");
+            document.writeln("<tr><th> Count </th><th> Value </th> <th> Cubed Value </th></tr>");
+
+            for(var r = 1 ; r <= row_num - 1 ; r++)
+            {
+                document.writeln("<tr><td>"+r+"</td><td>"+values[r]+"</td><td>"+cubes[r]+"</td></tr>");
+            }
+
+            document.writeln("<tr><td>the sum of all values entered</td><td>"+sum+"</td><td></td></tr>");
+            document.writeln("</table>");
+         }
+         
+        </script>
+    </body>
+</html>
